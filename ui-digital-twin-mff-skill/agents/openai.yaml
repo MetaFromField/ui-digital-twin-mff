@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI_Digital_Twin_MFF_Skill"
+  short_description: "根据需求与GLB快速搭建含设备详情、动态监控、告警和磨砂UI的数字孪生Demo"
+  default_prompt: "使用 $ui-digital-twin-mff-skill，依据我的项目需求和指定GLB搭建可配置的动态数字孪生Demo。"

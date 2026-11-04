@@ -1,0 +1,33 @@
+# User models and generated demo projects are not part of the skill distribution.
+*.glb
+/models/
+/demo/
+/demos/
+/verification/
+/backups/
+
+# Local credentials and machine settings.
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+.vscode/
+.idea/
+
+# Dependencies, caches and temporary files.
+node_modules/
+__pycache__/
+*.py[cod]
+.validation-deps/
+*.log
+*.tmp
+*.bak
+Thumbs.db
+.DS_Store
+
+# Keep assets/frontend-template/dist/ and its vendor dependencies tracked:
+# they are required runtime resources, not disposable build output.

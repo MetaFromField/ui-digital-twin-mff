@@ -1,0 +1,33 @@
+/* The mask fades both the gray tint and the backdrop blur toward the model. */
+.side-column .muted,.side-column .device-row small,
+.side-column .animation-name small,.side-column .clip-time,
+.side-column .mapping-note,.side-column .detail-meta b,
+.side-column .subheading,.side-column .kpi-foot,
+.side-column .alarm-table-head,.side-column .alarm-row small{color:#707c85;}
+body::before,body::after{
+ background:rgba(var(--frost-tint,237,240,242),var(--frost-opacity,.58));
+ -webkit-backdrop-filter:blur(var(--frost-blur,14px)) saturate(var(--frost-saturation,.72)) contrast(var(--frost-contrast,.96));
+ backdrop-filter:blur(var(--frost-blur,14px)) saturate(var(--frost-saturation,.72)) contrast(var(--frost-contrast,.96));
+ -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+}
+body::before{
+ -webkit-mask-image:linear-gradient(to right,#000 0%,#000 calc(100% - 160px),rgba(0,0,0,.72) calc(100% - 110px),rgba(0,0,0,.22) calc(100% - 45px),transparent 100%);
+ mask-image:linear-gradient(to right,#000 0%,#000 calc(100% - 160px),rgba(0,0,0,.72) calc(100% - 110px),rgba(0,0,0,.22) calc(100% - 45px),transparent 100%);
+}
+body::after{
+ -webkit-mask-image:linear-gradient(to left,#000 0%,#000 calc(100% - 160px),rgba(0,0,0,.72) calc(100% - 110px),rgba(0,0,0,.22) calc(100% - 45px),transparent 100%);
+ mask-image:linear-gradient(to left,#000 0%,#000 calc(100% - 160px),rgba(0,0,0,.72) calc(100% - 110px),rgba(0,0,0,.22) calc(100% - 45px),transparent 100%);
+}
+@media(max-width:1000px){
+ body::before{
+  inset:430px 0 0;width:auto;background:rgba(237,240,242,.66);
+  -webkit-backdrop-filter:blur(10px) saturate(.72) contrast(.96);
+  backdrop-filter:blur(10px) saturate(.72) contrast(.96);
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 100px);
+  mask-image:linear-gradient(to bottom,transparent,#000 100px);
+ }
+ body::after{display:none;}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ body::before,body::after{background:rgba(237,240,242,.76);}
+}

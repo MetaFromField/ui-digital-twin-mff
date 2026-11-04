@@ -1,0 +1,224 @@
+{
+  "project": {
+    "title": "设备数字孪生",
+    "subtitle": "环境 · 能耗 · 设备运行监控",
+    "brand": "MFF DESIGN",
+    "site": "演示项目",
+    "lineId": "DEMO-01",
+    "filenamePrefix": "digital-twin"
+  },
+  "model": {
+    "path": "./assets/model.glb",
+    "sourceName": "",
+    "groundY": 0,
+    "normalizedSize": 32,
+    "metadata": {
+      "meshDefinitions": 0,
+      "animationCount": 0
+    },
+    "hasOwnFloor": false,
+    "excludeNodes": []
+  },
+  "devices": [],
+  "metrics": [
+    {
+      "key": "rpm",
+      "label": "主轴转速",
+      "unit": "rpm",
+      "precision": 0,
+      "min": 0,
+      "max": 10000,
+      "baseline": 120,
+      "amplitude": 4,
+      "detail": true,
+      "trend": true
+    },
+    {
+      "key": "motorTemp",
+      "label": "轴承温度",
+      "unit": "°C",
+      "precision": 1,
+      "min": -20,
+      "max": 180,
+      "baseline": 48,
+      "amplitude": 1,
+      "detail": true,
+      "trend": true,
+      "alarm": {
+        "warning": 65,
+        "fault": 80,
+        "direction": "high"
+      }
+    },
+    {
+      "key": "current",
+      "label": "运行电流",
+      "unit": "A",
+      "precision": 1,
+      "min": 0,
+      "max": 500,
+      "baseline": 25,
+      "amplitude": 2,
+      "detail": true,
+      "trend": true
+    },
+    {
+      "key": "power",
+      "label": "实时功率",
+      "unit": "kW",
+      "precision": 1,
+      "min": 0,
+      "max": 300,
+      "baseline": 20,
+      "amplitude": 2,
+      "detail": true,
+      "trend": true
+    },
+    {
+      "key": "vibration",
+      "label": "振动速度",
+      "unit": "mm/s",
+      "precision": 2,
+      "min": 0,
+      "max": 100,
+      "baseline": 1.2,
+      "amplitude": 0.1,
+      "detail": true,
+      "trend": true,
+      "alarm": {
+        "warning": 4.5,
+        "fault": 7.1,
+        "direction": "high"
+      }
+    },
+    {
+      "key": "energy",
+      "label": "今日用电",
+      "unit": "kWh",
+      "precision": 1,
+      "min": 0,
+      "max": 100000,
+      "baseline": 150,
+      "amplitude": 0,
+      "detail": true,
+      "trend": true
+    },
+    {
+      "key": "load",
+      "label": "设备负载率",
+      "unit": "%",
+      "precision": 1,
+      "min": 0,
+      "max": 100,
+      "baseline": 65,
+      "amplitude": 4
+    },
+    {
+      "key": "ambientTemp",
+      "label": "区域温度",
+      "unit": "°C",
+      "precision": 1,
+      "min": -30,
+      "max": 80,
+      "baseline": 26,
+      "amplitude": 1
+    },
+    {
+      "key": "humidity",
+      "label": "相对湿度",
+      "unit": "%RH",
+      "precision": 1,
+      "min": 0,
+      "max": 100,
+      "baseline": 54,
+      "amplitude": 2
+    }
+  ],
+  "hero": {
+    "deviceId": "unit-01",
+    "key": "energy",
+    "max": 1000
+  },
+  "secondary": {
+    "deviceId": "unit-01",
+    "key": "humidity"
+  },
+  "loadKey": "load",
+  "data": {
+    "initialMode": "demo",
+    "wsUrl": "",
+    "intervalMs": 2000,
+    "staleMs": 10000,
+    "historyLength": 60,
+    "maxEvents": 200
+  },
+  "demo": {
+    "initialScenario": "normal",
+    "electrical": {
+      "lineVoltage": 380,
+      "powerFactor": 0.85
+    },
+    "historyEvents": [],
+    "rpm": 120
+  },
+  "appearance": {
+    "accent": "#2878df",
+    "background": "#edf0f2",
+    "frostOpacity": 0.58,
+    "blurPx": 14,
+    "saturation": 0.72,
+    "contrast": 0.96,
+    "exposure": 1.02,
+    "environmentIntensity": 0.6,
+    "lighting": {
+      "key": 3.6,
+      "fill": 0.85,
+      "rim": 0.7,
+      "hemisphere": 0.45,
+      "shadowMapSize": 4096
+    }
+  },
+  "materialRules": [
+    {
+      "match": "qiangti",
+      "metalness": 0,
+      "roughness": 0.8,
+      "envMapIntensity": 0.65
+    },
+    {
+      "match": "jinshuhei",
+      "color": "#303438",
+      "metalness": 0.74,
+      "roughness": 0.36,
+      "envMapIntensity": 1.2
+    },
+    {
+      "match": "jinshu",
+      "color": "#b0b7c1",
+      "metalness": 0.9,
+      "roughness": 0.29,
+      "envMapIntensity": 1.35
+    },
+    {
+      "match": "chanxian",
+      "colorScale": 0.7,
+      "metalness": 0.5,
+      "roughness": 0.34,
+      "envMapIntensity": 1.15
+    }
+  ],
+  "runMetric": "rpm",
+  "workshop": {
+    "pageSize": 6,
+    "groups": [
+      {
+        "id": "main",
+        "name": "设备区"
+      }
+    ],
+    "idleDevices": [],
+    "warningDevice": null,
+    "faultDevice": null,
+    "energyReferenceKWh": 1000
+  }
+}

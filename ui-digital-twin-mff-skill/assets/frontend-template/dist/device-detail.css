@@ -1,0 +1,76 @@
+.card-view-button{background:#2878df;color:#fff;border:0;border-radius:8px;padding:9px 18px;font-size:12px;transition:background-color .18s,box-shadow .18s;white-space:nowrap}
+.card-view-button:hover{background:#4992ed;color:#fff;box-shadow:0 3px 10px #2878df1c}
+/* Keep only a white draggable thumb, with no rail or arrow controls. */
+:is(.equipment-card-grid,.center-event-list,.inspector-scroll){scrollbar-color:#fff transparent;scrollbar-width:thin;scroll-padding-block:44px;overscroll-behavior:contain}
+:is(.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar{width:5px;height:5px;background:transparent}
+:is(.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar-track{background:transparent}
+:is(.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar-thumb{background:#fff;border-radius:10px;border:0}
+:is(.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar-button{display:none;width:0;height:0}
+:is(.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar-corner{background:transparent}
+:is(.equipment-card-grid,.center-event-list){-webkit-mask-image:linear-gradient(to bottom,transparent,#000 28px,#000 calc(100% - 34px),transparent);mask-image:linear-gradient(to bottom,transparent,#000 28px,#000 calc(100% - 34px),transparent);padding-top:36px!important;padding-bottom:48px!important}
+.equipment-card,.center-event{scroll-margin-block:44px}
+body[data-page=detail]{--left:320px;--right:448px}
+body[data-page=detail]::before,body[data-page=detail]::after{display:block!important;background:rgba(var(--frost-tint),.58)}
+body[data-page=detail] .masthead{background:linear-gradient(#edf0f2fa,#edf0f2c0 70%,#edf0f200);height:124px}
+body[data-page=detail] #labels{display:none}
+.back-equipment{font-size:14px;color:#2878df;padding:0 0 10px;border-bottom:2px solid #2878df;white-space:nowrap}
+.device-detail-page[data-status=fault] #inspector-status{color:#2878df;background:#eaf2ff}.device-detail-page[data-status=warning] #inspector-status{color:#a2701d;background:#fff4df}.device-detail-page[data-status=offline] #inspector-status,.device-detail-page[data-status=stopped] #inspector-status{color:#7a8995;background:#eff2f4}
+.device-detail-page{position:fixed;inset:120px 32px 44px;z-index:3;display:grid;grid-template-columns:320px minmax(0,1fr) 448px;gap:24px;pointer-events:none;min-height:0}
+.detail-inspector{min-width:0;min-height:0;pointer-events:auto;overflow:hidden}.detail-controls{grid-column:1}.detail-information{grid-column:3}.inspector-scroll{height:100%;overflow:auto;padding:25px 12px 48px 12px;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 18px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to bottom,transparent,#000 18px,#000 calc(100% - 28px),transparent)}
+.inspector-identity h2{font-size:25px;margin:9px 0}.inspector-identity p{font-size:12px;color:#8493a0;margin-bottom:22px}.detail-controls .animation-panel,.detail-controls .camera-panel{background:none;border:0;box-shadow:none}.detail-controls #animation-list{grid-template-columns:1fr;margin:4px 0 14px;gap:7px}.detail-controls .workshop-track{min-height:40px}.detail-controls .workshop-track span{font-size:12px}.animation-panel .animation-master{margin:4px 0 8px}.animation-panel .animation-master button{font-size:12px}.detail-controls .panel-title{padding:3px 0 9px}.detail-controls .mapping-note{margin:8px 0 22px}.detail-controls .button-group{margin-inline:0}.detail-controls .exposure-control{margin-inline:0}.detail-controls .camera-panel{margin-bottom:24px}
+.device-detail-page h3{font-size:14px;letter-spacing:0;font-weight:650}.inspector-section-title{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}.inspector-section-title h2{font-size:23px}.inspector-section-title>span:not(.card-status){font-size:11px;color:#91a0ab}.detail-hint{font-size:11px;color:#8d9aa6;line-height:1.8;margin:7px 0 13px}.detail-part{width:100%;display:flex;justify-content:space-between;gap:8px;text-align:left;border-radius:6px;padding:10px;font-size:12px;color:#60788b}.detail-part small{font-size:11px;color:#8d9daa}.detail-part.active{background:#2878df14;color:#2878df}.detail-part:hover{background:#ffffff75}.part-information{margin-top:15px;padding:13px 0;color:#8495a2}.part-information>span{font-size:11px;display:block}.part-information b{font-size:14px;display:block;color:#4f697d;margin-top:6px}.part-information p{font-size:11px;line-height:1.8;overflow-wrap:anywhere;margin-top:6px}
+.detail-model-hint{position:absolute;bottom:14px;left:344px;right:472px;text-align:center;color:#92a0aa;font-size:11px;pointer-events:none}.detail-model-hint>span{color:#627e94;letter-spacing:2px}.detail-model-hint p{font-size:11px;margin-top:7px}
+.inspector-properties{margin:0 0 23px}.inspector-properties>div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:5px 0;font-size:11px;line-height:1.6}.inspector-properties dt{color:#93a0aa}.inspector-properties dd{margin:0;color:#607588;overflow-wrap:anywhere}.detail-information section{margin-bottom:25px}.inspector-metrics{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;margin:0}.inspector-metrics dt{font-size:11px;color:#8596a4;margin-bottom:4px}.inspector-metrics dd{margin:0;white-space:nowrap}.inspector-metrics b{font-size:27px;font-weight:600;letter-spacing:-.5px;color:#334c60;font-variant-numeric:tabular-nums}.inspector-metrics small{font-size:11px;color:#94a3ad;margin-left:5px}.inspector-metrics [data-metric=motorTemp] b{color:#2878df}.statistics-header,.statistics-row{display:grid;grid-template-columns:1.7fr repeat(3,.8fr);gap:8px;align-items:center;font-size:11px;padding:8px 0}.statistics-header{color:#8c9eac}.statistics-row{color:#688093}.statistics-row b{font-size:12px;font-weight:500;font-variant-numeric:tabular-nums}.inspector-threshold{padding:12px 0}.inspector-threshold b{font-size:12px;color:#627c90;font-weight:500}.inspector-threshold p,.inspector-threshold small{font-size:11px;line-height:1.8;color:#8a9aa7;display:block;margin-top:3px}.inspector-event{padding:11px 0}.inspector-event b{font-size:12px;font-weight:500;color:#667e92}.inspector-event p{font-size:11px;color:#94a3ae;margin-top:4px}
+@media(min-width:2300px) and (min-height:1250px){body[data-page=detail]{--left:360px;--right:500px}.device-detail-page{inset:155px 44px 48px;grid-template-columns:360px minmax(0,1fr) 500px;gap:32px}.detail-controls #animation-list{grid-template-columns:1fr 1fr;gap:9px 18px}.inspector-metrics b{font-size:32px}.inspector-metrics{gap:22px}.detail-model-hint{left:392px;right:532px}.detail-controls .workshop-track{min-height:48px}.inspector-properties>div{padding:7px 0;font-size:12px}.detail-information section{margin-bottom:30px}}
+@media(max-width:1500px){body[data-page=detail]{--left:285px;--right:370px}.device-detail-page{inset-inline:24px;grid-template-columns:285px minmax(0,1fr) 370px;gap:16px}.detail-model-hint{left:301px;right:386px}.inspector-properties>div{grid-template-columns:92px 1fr}.inspector-metrics b{font-size:23px}}
+@media(max-width:900px){body[data-page=detail]{--left:220px;--right:290px}.device-detail-page{inset:150px 14px 40px;grid-template-columns:220px minmax(0,1fr) 290px;gap:10px}.inspector-scroll{padding-inline:5px}.inspector-metrics{gap:14px 8px}.inspector-metrics b{font-size:21px}.inspector-properties>div{grid-template-columns:75px 1fr;gap:6px}.detail-model-hint{display:none}}
+
+/* Scroll chrome appears only while the pointer is inside the scroll region. */
+:is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll){scrollbar-width:thin;scrollbar-color:transparent transparent}
+:is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll):hover{scrollbar-color:rgba(255,255,255,.5) transparent}
+@supports selector(::-webkit-scrollbar){
+ :is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll),:is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll):hover{scrollbar-width:auto;scrollbar-color:auto}
+ :is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar{width:5px;height:5px;background:transparent}
+ :is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar-track{background:transparent}
+ :is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar-button{display:none;width:0;height:0}
+ :is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar-corner{background:transparent}
+ :is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll)::-webkit-scrollbar-thumb{background:transparent;border:0;border-radius:10px}
+ :is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll):hover::-webkit-scrollbar-thumb{background:rgba(255,255,255,.5)}
+ :is(body,dialog,.side-column,#alarm-list,#animation-list,.equipment-card-grid,.center-event-list,.inspector-scroll):hover::-webkit-scrollbar-thumb:hover{background:#fff}
+}
+.animation-panel .animation-master{gap:10px;margin-bottom:13px}
+.animation-panel .animation-master button{border:0;border-radius:8px;padding:10px 12px;min-height:36px;font-size:12px;font-weight:500;transition:background-color .16s}
+.animation-panel .animation-master #animation{background:#fff;color:#647e93}
+.animation-panel .animation-master #animation:hover{background:#fff;color:#2878df}
+.animation-panel .animation-master #reset-animations{background:#fff;color:#647e93}
+.animation-panel .animation-master #reset-animations:hover{background:#fff;color:#2878df}
+.camera-panel .scene-toolbar{background:#fff;border-radius:12px;gap:0;padding:3px 0;overflow:hidden}
+.camera-panel .button-group{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0;position:relative}
+.camera-panel .button-group+ .button-group::before{content:"";position:absolute;left:8px;right:8px;top:0;height:1px;background:linear-gradient(to right,transparent,rgba(150,163,175,.24) 20%,rgba(150,163,175,.24) 80%,transparent);pointer-events:none}
+.camera-panel .button-group button{position:relative;border:0;background:transparent;color:#687e90;padding:13px 3px;font-size:12px;line-height:1.4;white-space:nowrap}
+.camera-panel .button-group button:not(:last-child)::after{content:"";position:absolute;right:0;top:7px;bottom:7px;width:1px;background:linear-gradient(to bottom,transparent,rgba(150,163,175,.24) 25%,rgba(150,163,175,.24) 75%,transparent);pointer-events:none}
+.camera-panel .button-group button:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px;color:#2878df}
+.camera-panel .button-group button.active{background:transparent;color:#2878df;font-weight:600}
+
+/* The camera dock is a sibling of the scrolling information, so it never moves. */
+.detail-information{display:flex;flex-direction:column;gap:12px}.detail-information>.inspector-scroll{flex:1;min-height:0;height:auto}.detail-camera-dock{flex:none;padding:0 12px 4px}.detail-camera-dock .camera-panel{margin:0;background:none;border:0;box-shadow:none;backdrop-filter:none}.detail-camera-dock .panel-title{padding:6px 0 10px}.camera-panel .scene-toolbar{margin:0 12px}.detail-camera-dock .scene-toolbar{margin:0}.camera-panel .button-group button{padding-block:11px}
+.overview-block .rpm-track,.overview-block .rpm-track i{border-radius:999px}.overview-block .rpm-track{overflow:hidden;height:9px}
+#part-labels{position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden}.part-label{border:0;border-radius:7px;padding:8px 12px;background:#ffffffd9;color:#49647a;box-shadow:0 3px 14px #26496714;font-size:12px}.part-label.selected{background:#fff;color:#2878df;box-shadow:0 0 0 1px #2878df33,0 3px 16px #2878df20}
+
+.part-label:after{display:none}.part-label-lines{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none}.part-label-lines line{stroke:#8b9dad;stroke-width:1;opacity:.65}.part-label-lines line.selected{stroke:#2878df;opacity:.85}
+
+/* Shared motion controls in overview and device inspector. */
+body[data-page=detail] .animation-panel>.panel-title{display:none}.animation-panel .animation-master button{margin-right:0;box-shadow:none}.animation-panel .animation-master button:hover{box-shadow:none;text-decoration:none}
+
+.animation-panel .workshop-track select{background:transparent;border:0;box-shadow:none;color:#42464b;border-radius:0;padding:0;font-size:11px;width:32px;appearance:auto}
+
+
+.side-column .animation-panel .animation-master #animation.active{background:#fff;color:#647e93;text-decoration:none}.side-column .animation-panel .animation-master #animation.active:hover{background:#fff;color:#2878df;text-decoration:none}
+
+
+.animation-panel .workshop-track{grid-template-columns:minmax(0,1fr) 22px 46px}.animation-panel .workshop-track select{width:46px;transform:none}
+
+/* Many clips remain reachable without pushing controls outside the screen. */
+.side-column{overflow-y:auto;min-height:0}.animation-panel #animation-list{max-height:30vh;overflow-y:auto;min-height:0;scroll-padding-block:10px;padding-block:6px}
+
+.side-column .animation-panel #animation-list{max-height:24vh}

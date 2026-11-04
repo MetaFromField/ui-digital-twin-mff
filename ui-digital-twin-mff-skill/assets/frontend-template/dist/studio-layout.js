@@ -1,0 +1,20 @@
+import {CONFIG,configureUI} from './config.js';
+const q=s=>document.querySelector(s);
+const header=q('header'),nav=q('.topnav'),main=q('main'),footer=q('footer'),scene=q('.scene-panel');
+const devices=q('.devices-panel'),details=q('.details-panel'),trend=q('.trend-panel'),alarms=q('.alarm-panel'),kpis=q('.kpis'),title=q('.page-title'),exportButton=q('#export');
+header.className='masthead';header.querySelector('.heading').insertAdjacentHTML('afterbegin','<div class="red-rule"></div>');
+header.querySelector('h1').innerHTML='设备数字孪生';header.querySelector('.heading').insertAdjacentHTML('beforeend','<p class="brand-subtitle">设备运行监控</p>');
+q('.header-right').append(q('#settings'));header.append(nav);nav.querySelector('.location').remove();
+const left=document.createElement('aside'),right=document.createElement('aside'),center=document.createElement('div');left.className='side-column left-column';right.className='side-column right-column';center.className='center-space';
+const overview=document.createElement('section');overview.className='overview-block';overview.innerHTML='<div class="section-kicker">PRODUCTION OVERVIEW <span>监测概览</span></div><div class="hero-speed"></div><div class="rpm-track"><i id="rpm-bar"></i></div><div class="scale-labels"><span>0</span><span>当前监测点</span><span>200 RPM</span></div>';
+overview.querySelector('.hero-speed').append(q('#rpm'));overview.querySelector('.hero-speed').insertAdjacentHTML('beforeend','<span class="hero-unit">REV / MIN<br><b>主轴转速</b></span>');kpis.children[1].remove();overview.append(kpis);
+const animations=document.createElement('section');animations.className='panel animation-panel';animations.innerHTML='<div class="panel-title"><h3>独立动画控制</h3><span class="muted">MOTION</span></div><div class="animation-master"></div><div id="animation-list"><p class="empty-state">模型载入后显示动画轨道</p></div><p class="mapping-note">动画为运动演示，播放速度与物理转速未标定。</p>';
+document.body.append(animations);animations.querySelector('.animation-master').append(q('#animation'));q('#animation').innerHTML='暂停全部';animations.querySelector('.animation-master').insertAdjacentHTML('beforeend','<button id="reset-animations">全部复位</button>');
+const cameraPanel=document.createElement('section');cameraPanel.className='panel camera-panel';cameraPanel.innerHTML='<div class="panel-title"><h3>视角 / 显示</h3><span class="muted">CAMERA & OVERLAYS</span></div>';
+document.body.append(cameraPanel);cameraPanel.append(q('.scene-toolbar'));q('#reset-view').innerHTML='总览';q('#top-view').innerHTML='俯视';q('#rotate-view').innerHTML='环绕';q('#reset-view').insertAdjacentHTML('afterend','<button id="front-view">正视</button>');q('#color-mode').innerHTML='状态着色';q('#wireframe').innerHTML='线框';cameraPanel.querySelector('.button-group:last-child').insertAdjacentHTML('beforeend','<button id="toggle-labels" class="active" aria-pressed="true">标注</button><button id="toggle-shadows" class="active" aria-pressed="true">阴影</button>');
+const sceneBottom=document.createElement('div');sceneBottom.className='scene-bottom';sceneBottom.append(q('.legend'));sceneBottom.append(q('.scene-header p'));sceneBottom.append(q('.scene-foot'));title.className='scene-title';title.prepend(q('#scene-mode'));title.querySelector('.text-btn')?.remove();center.append(title,sceneBottom);
+const sceneHeader=q('.scene-header');sceneHeader.remove();details.querySelector('.device-icon').remove();
+left.append(overview,devices,animations,exportButton);right.append(details,trend,alarms,cameraPanel);
+scene.className='scene-panel';main.className='overlay-layout';main.replaceChildren(left,center,right);document.body.prepend(scene,header,main,footer);q('.workspace').remove();q('.rail').remove();
+
+configureUI();
