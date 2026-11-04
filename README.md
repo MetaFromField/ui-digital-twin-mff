@@ -1,12 +1,12 @@
 # UI_Digital_Twin_MFF_Skill
-<img width="1774" height="887" alt="exec-1f537b60-e7dc-4ac9-b71e-8d385fd69155_compressed" src="https://github.com/user-attachments/assets/f8c301bd-f0e1-4b55-a04a-4be812d43b73" />
-
 
 根据项目需求与用户自备的 GLB，辅助编程 agent 搭建可配置的 Three.js 浅色明亮风格数字孪生监控 Demo。此目录已整合技能说明、三个必要工具、完整前端模板、本地 Three.js / Draco 依赖及 MIT LICENSE，可独立复制使用。
 
 **必须自备 GLB 模型。本 skill 没有自动生成模型的功能，也不会给静态模型自动制作机械动画。**
 
 **skill 辅助生成的数据为演示参考数据，不作为真实数据指导项目生产工作。**
+
+<img width="1774" height="887" alt="exec-1f537b60-e7dc-4ac9-b71e-8d385fd69155_compressed" src="https://github.com/user-attachments/assets/f8c301bd-f0e1-4b55-a04a-4be812d43b73" />
 
 ## 项目解决什么问题
 
